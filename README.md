@@ -471,7 +471,6 @@ my_struct_t * my_func(void);
 |Stop	           |Stopping a process                                |
 |Test	           |Performing a test                                 |
 |Update	         |Updating data                                     |
-|Is	             |Polling a logic status                            |
 
 ## Variables
 
