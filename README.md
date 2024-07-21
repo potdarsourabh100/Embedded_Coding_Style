@@ -39,11 +39,11 @@ int32_t a = sum (4, 3);             /* Wrong */
 ```
 - Never use `__` or `_` at the start for a variables/functions/macros/types. This is usually used by internal C/C++ or embedded C/C++ library variables/functions/macros/types.
 - Prefer `_private` at the end of the variables/functions for strictly module-private (static) variables/functions.
-- Use camelCase writing for global & static variables/functions/types with **optional** underscore `_`.
+- Use PascalCase writing for global & static variables/functions/types with **optional** underscore `_`.
 - Use lowercase writing for local variables/functions/types with **optional** underscore `_`.
 - Use Uppercase writing for constant variables with **optional** underscore `_`. Suggested to write all constant variable with `#define` pre-processor directive. In case, if needed, can use `const` keyword too.
 ```c
-int my_Name = 0;
+int My_Name = 0;
 void my_Function_For_Demo(void)
 {
   int my_variable_for_demo = 0;
