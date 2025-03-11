@@ -9,15 +9,6 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [A single request](https://github.com/MaJerle/c-code-style/blob/main/README.md#the-single-most-important-rule)
     - [C standard Libraries](https://github.com/MaJerle/c-code-style/blob/main/README.md#the-single-most-important-rule)
     - [General rules for Code Formating](https://github.com/MaJerle/c-code-style/blob/main/README.md#general-rules)
-    - [Comments](https://github.com/MaJerle/c-code-style/blob/main/README.md#comments)
-    - [Functions](https://github.com/MaJerle/c-code-style/blob/main/README.md#functions)
-    - [Variables](https://github.com/MaJerle/c-code-style/blob/main/README.md#variables)
-    - [Structures, enumerations, typedefs](https://github.com/MaJerle/c-code-style/blob/main/README.md#structures-enumerations-typedefs)
-    - [Compound statements](https://github.com/MaJerle/c-code-style/blob/main/README.md#compound-statements)
-        - [Switch statement](https://github.com/MaJerle/c-code-style/blob/main/README.md#switch-statement)
-    - [Macros and preprocessor directives](https://github.com/MaJerle/c-code-style/blob/main/README.md#macros-and-preprocessor-directives)
-    - [Documentation](https://github.com/MaJerle/c-code-style/blob/main/README.md#documentation)
-    - [Header/source files](https://github.com/MaJerle/c-code-style/blob/main/README.md#headersource-files)
 
 ## A single request
 
@@ -27,17 +18,17 @@ As a developer & contineous learner even sometimes I forget these rules & make m
 ## C Standard Libraries
 
 - Standard C file selection for operation. There are many C Standard libraries that you can use instead of writing code from scratch. The following are the most common standard libraries:
-**<stdio.h>** Input/output
-**<string.h>** String handling library
-**<stdbool.h>** Boolean type
-**<stdint.h>** Fixed-width integer types
-**<stdarg.h>** Variable arguments capture
-**<math.h>** Common mathematics functions
-**<complex.h>** Complex number arithmetic
-**<ctype.h>** Character types checking
-**<limits.h>** Sizes of basic types
-**<stdlib.h>** General utilities such as: Memory, program, string conversions, random and algorithms
-**<time.h>** Time and date utilities
+- **<stdio.h>** Input/output
+- **<string.h>** String handling library
+- **<stdbool.h>** Boolean type
+- **<stdint.h>** Fixed-width integer types
+- **<stdarg.h>** Variable arguments capture
+- **<math.h>** Common mathematics functions
+- **<complex.h>** Complex number arithmetic
+- **<ctype.h>** Character types checking
+- **<limits.h>** Sizes of basic types
+- **<stdlib.h>** General utilities such as: Memory, program, string conversions, random and algorithms
+- **<time.h>** Time and date utilities
 
 ## General Rules For Code Formating
 
