@@ -13,6 +13,7 @@ This document describes C code style used by EmbSysTech in his projects and libr
 ## A single request
 
 I encourage everyone to adhere to our embedded C coding guidelines to ensure consistency and readability across our projects. Following these guidelines will help maintain clarity and facilitate collaboration among everyone. Please take the time to study our existing libraries as examples of best practices. Imitating the style, including proper whitespace usage, function declarations, and commenting conventions, will enhance both the quality of our code and our collective understanding. Let's commit to writing clean, maintainable code that reflects our team's standards and professionalism. Your cooperation is greatly appreciated!
+
 As a developer & contineous learner even sometimes I forget these rules & make mistakes. Please if you find any such mistakes rectify as well as comment & indicate so that these mistakes can be removed.
 
 ## C Standard Libraries
