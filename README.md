@@ -5,10 +5,10 @@ This document describes C code style used by EmbSysTech in his projects and libr
 ## Table of Contents
 
 - [Recommended C style and coding rules](https://github.com/MaJerle/c-code-style/blob/main/README.md#recommended-c-style-and-coding-rules)
-    - [Table of Contents](https://github.com/MaJerle/c-code-style/blob/main/README.md#table-of-contents)
-    - [A single request](https://github.com/MaJerle/c-code-style/blob/main/README.md#the-single-most-important-rule)
-    - [C standard Libraries](https://github.com/MaJerle/c-code-style/blob/main/README.md#the-single-most-important-rule)
-    - [General rules for Code Formating](https://github.com/MaJerle/c-code-style/blob/main/README.md#general-rules)
+    - [Table of Contents](https://github.com/potdarsourabh100/Embedded_Coding_Style/README.md#table-of-contents)
+    - [A single request](https://github.com/potdarsourabh100/Embedded_Coding_Style/README.md#the-single-most-important-rule)
+    - [C standard Libraries](https://github.com/potdarsourabh100/Embedded_Coding_Style/README.md#the-single-most-important-rule)
+    - [General rules for Code Formating](https://github.com/potdarsourabh100/Embedded_Coding_Style/README.md#general-rules)
 
 ## A single request
 
