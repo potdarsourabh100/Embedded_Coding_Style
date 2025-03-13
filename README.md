@@ -55,30 +55,99 @@ for(init; condition; step)
 do{}while(condition)
 
 ```
-
 - Brace on the **next line** for **function** declaration
 - Brace on the **next line** for **blocks**
 - Brace on the **next line** for **blocks in case** statements
-- Brace on the **next line** for **switch** statement
+- Brace on the **next line** for **switch** statement(e.g. `for`, `while`, `do`, `switch`, `if`, ...)
 - Brace on the **next line** for **linkage** (e.g. extern)
-- Opening curly bracket is always at the same line as keyword (`for`, `while`, `do`, `switch`, `if`, ...)
-
 ```c
+/* WRONG */
+void myFunction(int param) {
+    // Function body
+}
+if (condition) {
+    // Code block
+}
+else 
+   // Another block
+
+/* OK */
+for (int i = 0; i < 10; i++)
+{
+    // Loop body
+}
+
+while (condition)
+{
+    // Loop body
+}
+
+do
+{
+    // Loop body
+} while (condition);
+
+if (condition)
+{
+    // If block
+} else {
+    // Else block
+}
+
+switch (value)
+{
+    case 1:
+        // Case block
+        break;
+    default:
+        // Default case
+        break;
+}
 
 ```
-
-- Add white space for **Declarator list** after comma and after pointer
-- For **functions**, no white space before pointer, add a white space after pointer
-- Add a white space before opening parenthesis for **function**
+- Add white space for **Declarator list** after comma
+- For **functions**, add a white space after every argument & comma
 - Add a white space after semicolon in **for-loop** parameters
 - Add a white space after comma in **function arguments**
 - Add a white space before and after **assignment and binary operators**
 - Add a white space after comma in **Initializer list**
-
 ```c
+/* WRONG */
+int* ptrA, * ptrB, * ptrC;
+float* pValue, * pTemp;
 
+char* getString (int index);
+void processData (int value,float factor);
+
+for (int i = 0;i < 10;i++) {
+    sum += i;
+}
+/* OK */
+int *ptrA, *ptrB, *ptrC;
+float *pValue, *pTemp;
+
+int numbers[] = { 1, 2, 3, 4, 5 };
+float values[] = { 10.5, 20.8, 30.2 };
+
+char* getString(int index);
+void processData(int value, float factor);
+
+for (int i = 0; i < 10; i++)
+{
+    sum += i;
+}
+int result = a + b * c;
+x = y - z;
+sum = num1 + num2;
+count += 5;
 ```
-
+**Line Wrapping**
+- A maximum line width of 120 characters is recommended.
+- Indent wrapped line 2 indentation levels
+- For wrapped functions, wrap all elements on a new line
+- Enum list always wrapped regardless of line width
+- For wrapped expressions, wrap only necessary parts
+- For wrapped initializer list, wrap only necessary parts
 
 
 
