@@ -9,6 +9,7 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [A single request](#a-single-request)
     - [C standard Libraries](#c-standard-libraries)
     - [General rules for Code Formating](#general-rules-for-code-formating)
+    - [Variables](#variables)
 
 ## A single request
 
@@ -149,6 +150,7 @@ count += 5;
 - For wrapped expressions, wrap only necessary parts
 - For wrapped initializer list, wrap only necessary parts
 
+## Variables
 
 
 
