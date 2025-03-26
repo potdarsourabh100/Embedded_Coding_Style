@@ -42,7 +42,12 @@ As a developer & contineous learner even sometimes I forget these rules & make m
 - Use Indent statements within **block**
 - Use Indent statements within **switch** body
 - Use Indent statements within **case** body
-
+- Always use /* comment */ for comments, even for single-line comment
+- Always include check for C++ with extern keyword in header file
+- Every function MUST include doxygen-enabled comment, even if function is static
+- Use English names/text for functions, variables, comments
+- Always use < and > for C Standard Library include files, eg. #include <stdlib.h>
+- Always use "" for custom libraries, eg. #include "my_library.h"
 ```c
 /* Wrong */
 if (condition)
@@ -151,6 +156,84 @@ count += 5;
 - For wrapped initializer list, wrap only necessary parts
 
 ## Variables
+- Use camelCase naming convention for all trypes of variables. First word starts with a lower case and all following words start with upper case
+```c
+    int16_t initialTempurature;
+    float gpsLatitude;
+```
+– Use clear and descriptive names & do not use short names
+- Avoid using abbreviations
+- Make the variable name as short as possible, yet clear.
+```c
+/* WRONG */
+int16_t avgTemp;
+/* OK */          
+int16_t averageTempurature; 
+```
+– Declare variables in separate lines this generally improves readability.
+- It reduces future potential bugs related to multiple variables in a single line, like delete or comment out.
+- Declare all local variables of the same type in the same line
+```c
+   /* OK */
+    char a;             
+    char a, b;          
+    
+    /* WRONG */
+    char a;
+    char b;             /* Wrong, variable with char type already exists */
+```
+- Align variable names and values for a group of declarations, for better readability, as follows:
+```c
+uint16_t avarageTempurature = 15;
+uint16_t totalRPM           = 17;
+float    avarageSpeed       = 12.56f;
+```
+– For Pointer variables, use the letter 'ptr' as a prefix:
+```c
+char *ptrEmployeeName;
+```
+For Double Pointer variables, use "pp" as a prefix
+```c
+char **ppWifiNames;
+```
+- For Global variables, use the letter 'glb' as a prefix
+```c
+uint8_t glbNextIndex;
+```
+– When a variable is both Global and Pointer, use 'gptr' as a prefix
+```c
+char *gptrLastName;
+```
+- Notes:
+    - Local scope: Referring to when a variable is declared within a function
+    - Global scope: Referring to when a variable is declared globally in a source file, or a more special case is when declared as static within a function.
+- Static Keyword:
+    - Use 'static' keyword when a variable or function is to be visible only within a single source file.
+    - It is recommended to keep variables within a source file static if they are not meant to be visible by other files.
+    - **However, it is not recommended to define a static variable within a function**, this can make your code less readable and more susceptible to bugs.
+    
+- When a variable is used by interrupt routine or is a memory-mapped pointer, it must be declared as volatile.
+- Tick counters are incremented in an Interrupt routine, thus volatile
+- Memory-mapped pointers values are volatile since a register can be changed by hardware.
+```c
+volatile uintmax_t glbCounterTicks = 0;
+
+volatile uint8_t *ptrInputSwitch = (uint8_t*)(GPIOA->IDR);
+```
+- Declare local variables in order
+    i. Custom structures and enumerations
+    ii. Global Integer types, unsigned type 
+    iii. Global Single/Double floating point
+    iv. local Integer types, unsigned type 
+    v. local Single/Double floating point
+- Always declare local variables at the beginning of the block, before first executable statement
+- Except char, float or double, always use types declared in stdint.h library, eg. uint8_t for unsigned 8-bit, etc.
+- Always compare pointers against NULL value.
+- Always use size_t for length or size variables.
+- Always use uintmax_t_t for max length or size variables.
+- Always use uintptr_t* or void* for length or size pointers.
+- Always use const for pointer if function should not modify memory pointed to by pointer.
+- Always use const for function parameter or variable, if it should not be modified.
 
 
 
