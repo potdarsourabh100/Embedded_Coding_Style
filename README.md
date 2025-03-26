@@ -10,6 +10,7 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [C standard Libraries](#c-standard-libraries)
     - [General rules for Code Formating](#general-rules-for-code-formating)
     - [Variables](#variables)
+    - [Constants](#constants)
 
 ## A single request
 
@@ -235,6 +236,7 @@ volatile uint8_t *ptrInputSwitch = (uint8_t*)(GPIOA->IDR);
 - Always use const for pointer if function should not modify memory pointed to by pointer.
 - Always use const for function parameter or variable, if it should not be modified.
 
+## Constants
 
 
 
