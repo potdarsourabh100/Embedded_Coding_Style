@@ -238,9 +238,34 @@ volatile uint8_t *ptrInputSwitch = (uint8_t*)(GPIOA->IDR);
 
 ## Constants
 
+- Always use const for pointer if function should not modify memory pointed to by pointer
+- Always use const for function parameter or variable, if it should not be modified
+```c
+/* When ptrval could be modified, data pointed to by ptrval could not be modified */
+void myFunc(const void* ptrval)
+{
 
+}
 
+/* When ptrval and data pointed to by d both could not be modified */
+void myFunc(const void* const ptrval)
+{
 
+}
+
+/* Not REQUIRED, until & unless it is advised */
+void myFunc(const size_t len)
+{
+
+}
+
+/* When ptrval should not be modified inside function, only data pointed to by ptrval could be modified */
+void myFunc(void* const ptrval)
+{
+
+}
+```
+## Structure
 
 
 
