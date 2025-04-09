@@ -11,6 +11,7 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [General rules for Code Formating](#general-rules-for-code-formating)
     - [Variables](#variables)
     - [Constants](#constants)
+    - [Structures](#structures)
 
 ## A single request
 
@@ -265,9 +266,37 @@ void myFunc(void* const ptrval)
 
 }
 ```
-## Structure
+## Structures
 
+- Always typedef a structure
+- Use PascalCase for Structure name
+- Typedef variable name still uses camelCase
+- Add the suffix _t to the typedef name
+- Use filename as a prefix to the struct typedef name
+- Do not memory-map structure bitfields, instead access them directly
+- Always add trailing comma in the last element of structure (or its children) initialization (this helps clang-format to properly format structures). Unless structure is very simple and short.
+- When initializing structure on declaration, use C99 initialization style
+```c
+// sensor.h
+#ifndef SENSOR_H
+#define SENSOR_H
 
+typedef struct {
+    float temperature;
+    float humidity;
+    float pressure;
+} Sensor_SensorData_t;
+
+#endif /* SENSOR_H */
+/* main.c */
+#include "sensor.h"
+
+Sensor_SensorData_t sensorData = {
+    .temperature = 25.3,
+    .humidity = 45.8,
+    .pressure = 1013.25,
+};
+```
 
 
 
