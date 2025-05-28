@@ -12,6 +12,7 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [Variables](#variables)
     - [Constants](#constants)
     - [Structures](#structures)
+    - [Enums](#enums)
 
 ## A single request
 
@@ -297,9 +298,21 @@ Sensor_SensorData_t sensorData = {
     .pressure = 1013.25,
 };
 ```
-
-
-
+## Enums
+- Always typedef an Enum.
+- Use PascalCase for Enum Name.
+- Add the suffix _e to the Enum name.
+- Enum elements name shall start with the prefix <TypedefName_>
+- Use filename as a prefix to Enum name and hence the individual elements.
+```c
+typedef enum
+{
+  Mpu6050_FullScale_2g = 0,
+  Mpu6050_FullScale_4g,
+  Mpu6050_FullScale_8g,
+  Mpu6050_FullScale_16g,
+}Mpu6050_FullScale_e;
+```
 
 
 
