@@ -13,6 +13,10 @@ This document describes C code style used by EmbSysTech in his projects and libr
     - [Constants](#constants)
     - [Structures](#structures)
     - [Enums](#enums)
+    - [Conditional Flow](#conditional-flow)
+    - [Macros](#macros)
+    - [Functions](#functions)
+    - [Header & Source File](#header-&-source-file)
 
 ## A single request
 
@@ -314,67 +318,81 @@ typedef enum
 }Mpu6050_FullScale_e;
 ```
 
+## Conditional Flow (if,if-else if-else,for,while,do-while statements)
+- Avoid using single line condition
+- When checking for multiple conditions, enclose conditions with parentheses
+- When comparing a variable with constant, put constant first on the left-hand side
+- Use Enum as switch case variable, whenever possible
+- Do not put a default case when an Enum is used as the switch case variable
+- To define a new variable within a case, add a code block explicitly
+- If multiple cases have the same handling, use fall through.
+- When using Non-Enum switch case variable, default case must be added
+- Avoid using magic numbers for loop counter
+      •	Use #define constants instead.
+      •	When the constant is changed, all instances will be updated unlike magic numbers where you need to change them individually.
 
+## Macros
+- Use full upper-case letters for Macros. Separate words with underscore '_'
+- When defining a series of defines, use double underscore __ to separate prefix text from individual elements name.
+- Enclose arithmetic operations within Macros with parentheses
+- For parametric or function-like Macros, surround any use of Macro parameters with parentheses.
 
+```c
+/* GPIO Macros */
+#define GPIO__PORT_B         PORTB
+#define GPIO__DDR_B          DDRB
+#define GPIO__PIN_0          (1 << 0)
 
+/* LED Operation Macros */
+#define LED__ON()            (GPIO__PORT_B |= GPIO__PIN_0)
+#define LED__OFF()           (GPIO__PORT_B &= ~(GPIO__PIN_0))
+#define LED__TOGGLE()        (GPIO__PORT_B ^= GPIO__PIN_0)
 
+/* Delay Macro (ms) – Wrap parameter in parentheses */
+#define DELAY__MS(x)         (_delay_ms((x)))
 
+/* Arithmetic Macro – parentheses around operation */
+#define TIME__DOUBLE(t)      ((t) * 2)
+```
 
+## Functions
+- Function name shall follow the camelCase convention
+- Function name shall be clear and concise
+- For library functions, use the library name as a prefix
+- For callback functions, start the function name with "cb"
+- For Boolean conditional functions, start the function name with "is"
+- Functions shall have a single exit point, that is, functions shall have a single return statement whenever possible.
+- Do not use standard C library functions names.
 
+## Header & Source File
+- Use lower-case letters for file names
+- Make file name unique, clear, and as small as possible
+- Header file shall have a protection against multiple includes
+- Header file shall not declare variables or allocate memory space
+- Header file shall have minimum includes
+- Header and Source file shall have ordered content
+- Header file content shall be ordered as follows:
+•	Header comment
+•	Multiple includes protection
+•	Includes
+•	Types
+•	Functions prototypes
+•	Callback prototypes (callback functions prototypes)
 
+- Source file content shall be ordered as follows:
+•	Header comment
+•	Includes
+•	Macros / Defines
+•	Variables
+•	Private functions prototypes
+•	Private functions definitions
+•	Public functions definitions
+•	Callback definitions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Comments
+- Add a comment where additional information is necessary
+– Use single line comments in general
+– Use multiple line comment for commenting a section and single line comment for sub-sections
+- Add TODO comment for any incomplete code
+- Use Doxygen for function documentation
 
