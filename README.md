@@ -363,7 +363,29 @@ typedef enum
 - For Boolean conditional functions, start the function name with "is"
 - Functions shall have a single exit point, that is, functions shall have a single return statement whenever possible.
 - Do not use standard C library functions names.
-
+```c
+/*****************************************************************************
+ * @brief Initializes the ADC module.
+ *
+ * @details Configures the ADC peripheral with the specified resolution,
+ *          input channel, and sampling time. This must be called before
+ *          starting any ADC conversion.
+ *
+ * @param[in] channel   ADC channel number (e.g., 0 to 15).
+ * @param[in] resolution ADC resolution (e.g., 8, 10, or 12 bits).
+ *
+ * @return 0 if initialization was successful, -1 otherwise.
+ *
+ * @retval  0 Initialization successful.
+ * @retval -1 Invalid channel or resolution.
+ *
+ * @note Ensure that the system clock is configured before calling this function.
+ *
+ * @warning Do not call this function during an ongoing ADC conversion.
+ *
+ * @see adc_start_conversion(), adc_read_value()
+ *****************************************************************************/
+```
 ## Header & Source File
 - Use lower-case letters for file names
 - Make file name unique, clear, and as small as possible
